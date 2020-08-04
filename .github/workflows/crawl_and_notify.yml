@@ -1,0 +1,24 @@
+name: UPD
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: install tool
+      run: | 
+        sudo apt install python3 python3-pip -y
+        sudo pip3 install pipenv -y
+    - name: run code
+      run: |
+        pipenv run python3 main.py ${{ secrets.chat_id }} ${{ secrets.bot_token }}
+    - name: push
+      run: |
+        git add .
+        git config --global user.email "actions-bot@le37.tw"
+        git config --global user.name "actions bot"
+        git commit -m "UPD"
+        git push -f
