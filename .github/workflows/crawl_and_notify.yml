@@ -11,6 +11,7 @@ jobs:
     - name: install tool
       run: | 
         sudo pip3 install pipenv 
+        pipenv install
     - name: run code
       run: |
         pipenv run python3 main.py ${{ secrets.chat_id }} ${{ secrets.bot_token }}
