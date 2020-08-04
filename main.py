@@ -71,7 +71,7 @@ def main():
     for message in message_list:
         post_message("[主旨:"+message[0]+"]\n"+message[4]+"\n附件:\n"+message[5]+"\n發布時間:"+message[1]+"\n發布人:"+message[2]+"\n發布身份:"+message[3])
     now = datetime.datetime.now()
-    if now.hour==0 and 10<now.minute<20:
+    if now.hour==0 and 14<now.minute<19:
         countdown=str((datetime.date(2021, 1, 23)-datetime.date(now.year,now.month,now.day)).days-1)
         countdown1=str((datetime.date(2020, 8, 3)-datetime.date(now.year,now.month,now.day)).days-1)
         countdown2=str((datetime.date(2020, 9, 3)-datetime.date(now.year,now.month,now.day)).days-1)
