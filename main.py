@@ -6,7 +6,7 @@ import sys
 ### global var
 log_path='./log.txt'
 
-chat_id=sys.argv[1]
+chatid=sys.argv[1]
 bottoken=sys.argv[2]
 
 bot = telegram.Bot(token=bottoken)
