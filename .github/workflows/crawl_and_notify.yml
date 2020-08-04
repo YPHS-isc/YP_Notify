@@ -10,8 +10,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: install tool
       run: | 
-        sudo apt install python3 python3-pip -y
-        sudo pip3 install pipenv -y
+        sudo pip3 install pipenv 
     - name: run code
       run: |
         pipenv run python3 main.py ${{ secrets.chat_id }} ${{ secrets.bot_token }}
