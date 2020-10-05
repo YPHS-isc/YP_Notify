@@ -66,10 +66,6 @@ def crawl_info(index_table,VIEWSTATE,VIEWSTATEGENERATOR,EVENTVALIDATION):
     return message_list
 
 def main():
-    index_table,VIEWSTATE,VIEWSTATEGENERATOR,EVENTVALIDATION=crawl_index()
-    message_list=crawl_info(index_table,VIEWSTATE,VIEWSTATEGENERATOR,EVENTVALIDATION)
-    for message in message_list:
-        post_message("[主旨:"+message[0]+"]\n"+message[4]+"\n附件:\n"+message[5]+"\n發布時間:"+message[1]+"\n發布人:"+message[2]+"\n發布身份:"+message[3])
     now = datetime.datetime.now()
     if now.hour==0 and 8<now.minute<18:
         countdown=str((datetime.date(2021, 1, 23)-datetime.date(now.year,now.month,now.day)).days-1)
@@ -79,6 +75,10 @@ def main():
         countdown4=str((datetime.date(2020, 12, 15)-datetime.date(now.year,now.month,now.day)).days-1)
         msg=bot.send_message(chat_id=chatid, text='學測{}天 模考:[{},{},{},{}]'.format(countdown,countdown1,countdown2,countdown3,countdown4))
         bot.pin_chat_message(chat_id=chatid,message_id=str(msg.message_id))
+    index_table,VIEWSTATE,VIEWSTATEGENERATOR,EVENTVALIDATION=crawl_index()
+    message_list=crawl_info(index_table,VIEWSTATE,VIEWSTATEGENERATOR,EVENTVALIDATION)
+    for message in message_list:
+        post_message("[主旨:"+message[0]+"]\n"+message[4]+"\n附件:\n"+message[5]+"\n發布時間:"+message[1]+"\n發布人:"+message[2]+"\n發布身份:"+message[3])
     exit(0)
 
 
