@@ -67,7 +67,7 @@ def crawl_info(index_table,VIEWSTATE,VIEWSTATEGENERATOR,EVENTVALIDATION):
 
 def main():
     now = datetime.datetime.now()
-    if now.hour==0 and 8<now.minute<18:
+    if now.hour==0 and 5<now.minute:
         countdown=str((datetime.date(2021, 1, 23)-datetime.date(now.year,now.month,now.day)).days-1)
         countdown1=str((datetime.date(2020, 8, 3)-datetime.date(now.year,now.month,now.day)).days-1)
         countdown2=str((datetime.date(2020, 9, 3)-datetime.date(now.year,now.month,now.day)).days-1)
