@@ -73,8 +73,8 @@ def main():
         countdown2=str((datetime.date(2020, 9, 3)-datetime.date(now.year,now.month,now.day)).days-1)
         countdown3=str((datetime.date(2020, 11, 2)-datetime.date(now.year,now.month,now.day)).days-1)
         countdown4=str((datetime.date(2020, 12, 15)-datetime.date(now.year,now.month,now.day)).days-1)
-        msg=bot.send_message(chat_id=chatid, text='學測{}天 模考:[{},{},{},{}]'.format(countdown,countdown1,countdown2,countdown3,countdown4))
-        bot.pin_chat_message(chat_id=chatid,message_id=str(msg.message_id))
+        #msg=bot.send_message(chat_id=chatid, text='學測{}天 模考:[{},{},{},{}]'.format(countdown,countdown1,countdown2,countdown3,countdown4))
+        #bot.pin_chat_message(chat_id=chatid,message_id=str(msg.message_id))
     index_table,VIEWSTATE,VIEWSTATEGENERATOR,EVENTVALIDATION=crawl_index()
     message_list=crawl_info(index_table,VIEWSTATE,VIEWSTATEGENERATOR,EVENTVALIDATION)
     for message in message_list:
