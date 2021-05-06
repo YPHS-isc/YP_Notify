@@ -1,14 +1,14 @@
 [[source]]
-name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
-
-[dev-packages]
+name = "pypi"
 
 [packages]
 requests = "*"
 bs4 = "*"
 python-telegram-bot = "*"
 
+[dev-packages]
+
 [requires]
-python_version = "3.6"
+python_version = "3.9"

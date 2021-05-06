@@ -9,9 +9,10 @@ log_path='./log.txt'
 chatid=sys.argv[1]
 bottoken=sys.argv[2]
 
-bot = telegram.Bot(token=bottoken)
+#bot = telegram.Bot(token=bottoken)
 
 def post_message(message):
+    #print(message)
     requests.get("https://api.telegram.org/bot"+bottoken+"/sendMessage?chat_id="+chatid+"&text="+message)
 
 def open_log():
